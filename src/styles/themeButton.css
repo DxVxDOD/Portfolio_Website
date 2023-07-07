@@ -7,10 +7,10 @@
 .shine::after{
     content: '';
     position: absolute;
-    top: -210%;
+    top: -250%;
     left: -310%;
-    width: 300%;
-    height: 300%;
+    width: 450%;
+    height: 400%;
     opacity: 0;
     transform: rotate(30deg);
 
@@ -18,8 +18,8 @@
     background: linear-gradient(
       to right, 
       rgba(255, 255, 255, 0.13) 0%,
-      rgba(255, 255, 255, 0.13) 20%,
-      rgba(255, 255, 255, 0.5) 75%,
+      rgba(255, 255, 255, 0.13) 25%,
+      rgba(255, 255, 255, 0.5) 55%,
       rgba(255, 255, 255, 0.0) 100%
     );
 }
@@ -29,6 +29,6 @@
     top: -30%;
     left: -30%;
     transition-property: left, top, opacity;
-    transition-duration: 0.7s, 0.7s, 0.2s;
+    transition-duration: 1s, 1s, 0.2s;
     transition-timing-function:ease-out
 }
