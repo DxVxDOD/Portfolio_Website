@@ -4,8 +4,8 @@ export default function Cursor() {
       id={"cursor"}
       className={"fixed z-40 left-0 top-0 pointer-events-none"}
       xmlns="http://www.w3.org/2000/svg"
-      width="80"
-      height="80"
+      width="60"
+      height="60"
       viewBox="0 0 1000 1000"
       fill="none"
     >
