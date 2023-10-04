@@ -14,17 +14,33 @@
   -webkit-text-size-adjust: 100%;
 }
 
-#cursor-lag {
-  opacity: 0;
+.cursor {
+  opacity: 0.3;
   transition: opacity 500ms ease;
   mix-blend-mode: difference;
+  top: 0;
+  left: 0;
+  position: fixed;
+  pointer-events: none;
+  z-index: 50;
 }
 
-main:hover > #cursor-lag {
+.icon {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.icon-show {
   opacity: 1;
 }
 
+.show {
+  opacity: 1;
+}
 
+.hide {
+  opacity: 0;
+}
 
 #name {
   font-family: "Josefin Slab", serif;

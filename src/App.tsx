@@ -7,7 +7,7 @@ function App() {
   return (
     <main
       className={
-        "bg-[#0D0E0E] w-screen h-screen overflow-hidden box-border grid grid-cols-2 grid-rows-2 m-0 p-20 text-zinc-300"
+        "bg-[#0D0E0E] w-screen h-screen overflow-hidden box-border text-xl grid grid-cols-2 grid-rows-2 m-0 p-20 text-zinc-300"
       }
     >
       <h1 id={"name"} className={"flex flex-col text-7xl"}>

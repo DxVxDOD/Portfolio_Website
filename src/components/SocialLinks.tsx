@@ -1,6 +1,5 @@
 export default function SocialLinks() {
   return (
-    <div className={"nav-wrapper"}>
       <nav className={"flex gap-4 justify-end p-4 h-fit text-zinc-400"}>
         <a
           datatype={"a-tag"}
@@ -31,6 +30,5 @@ export default function SocialLinks() {
           <span>Personal-Blog</span>
         </a>
       </nav>
-    </div>
   );
 }
