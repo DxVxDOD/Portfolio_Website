@@ -35,7 +35,7 @@ export default function Cursor() {
 
       if (interacting) {
         cursor.setAttribute('class', 'cursor show')
-        if (interactable.getAttribute(('datatype')) === 'button') return cursor.children[1].setAttribute('class', 'opacity-1')
+        if (interactable.getAttribute(('datatype')) === 'button') return cursor.children[1].setAttribute('class', 'icon show')
         return cursor.children[2].setAttribute('class', 'opacity-1')
       }
 
