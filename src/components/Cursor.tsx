@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 export default function Cursor() {
   const touch = window.matchMedia("(hover: none)").matches;
+  if (touch) return null;
+
   const cursorAnimation = (
     cursor: HTMLElement,
     e: MouseEvent,
@@ -45,12 +47,12 @@ export default function Cursor() {
         cursor.setAttribute("class", "cursor");
       }
     };
+
     document.body.onmouseleave = () => {
       cursor.setAttribute("class", "cursor hide ");
     };
   }, []);
 
-  if (touch) return null;
 
   return (
     <svg

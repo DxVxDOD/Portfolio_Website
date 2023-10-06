@@ -8,7 +8,8 @@ function App() {
   return (
     <main
       className={
-        "bg-[#0D0E0E] w-screen h-screen overflow-hidden box-border flex flex-col justify-between xl:text-xl text-md sm:grid sm:grid-cols-2 sm:grid-rows-2 m-0 xl:p-20 p-6 text-[#dadddd]"
+        "bg-[#0D0E0E] w-screen h-screen overflow-hidden box-border flex flex-col justify-between xl:text-xl text-md " +
+        "sm:grid sm:grid-cols-2 sm:grid-rows-2 m-0 xl:p-20 p-6 text-[#dadddd]"
       }
     >
       <h1
@@ -18,16 +19,19 @@ function App() {
         <p className={"w-fit"}>David Orbang</p>
         <p className={"xl:p-10 pl-6 xl:pl-20 w-fit"}>Front-End Developer</p>
       </h1>
-      {useMediaQuery("sm") && <SocialLinks />}
-      {useMediaQuery("sm") && <About />}
+      {useMediaQuery("sm") &&
+      <>
+        <SocialLinks/>
+        <About/>
+        <Projects/>
+      </>
+      }
       {!useMediaQuery("sm") && (
-        <section className={"flex flex-col gap-4"}>
-          <About />
+        <section className={"flex flex-col gap-16"}>
           <Projects />
           <SocialLinks />
         </section>
       )}
-
       <Cursor />
     </main>
   );

@@ -1,9 +1,7 @@
 export default function SocialLinks() {
   return (
     <nav
-      className={
-        "flex justify-center text-xs p-2 gap-4 xl:justify-end xl:p-4 xl:h-fit text-[#939b9b] "
-      }
+      className={"flex text-md gap-2 h-fit z-20 justify-center xl:gap-4 xl:justify-end xl:p-4 xl:h-fit text-[#939b9b] "}
     >
       <a
         datatype={"a-tag"}
