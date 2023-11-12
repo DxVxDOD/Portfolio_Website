@@ -1,11 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Cursor() {
   const touch = window.matchMedia("(hover: none)").matches;
   if (touch) return null;
 
+  const cursorRef = useRef<SVGSVGElement>(null)
+
   const cursorAnimation = (
-    cursor: HTMLElement,
+    cursor: SVGSVGElement,
     e: MouseEvent,
     interacting: boolean,
   ) => {
@@ -23,39 +25,68 @@ export default function Cursor() {
     });
   };
 
-  useEffect(() => {
-    const cursor: HTMLElement = document.querySelector(".cursor")!;
-    window.onmousemove = (e) => {
-      const target = e.target as HTMLElement;
-      const interactable = target.closest(".interactable")! as HTMLElement;
-      const interacting = interactable !== null;
+  // useEffect(() => {
+  //   const cursor = cursorRef.current!
+  //   window.onmousemove = (e) => {
+  //     const target = e.target as HTMLElement;
+  //     const interactable = target.closest(".interactable")! as HTMLElement;
+  //     const interacting = interactable !== null;
+  //
+  //     cursorAnimation(cursor, e, interacting);
+  //
+  //     if (interacting) {
+  //       cursor.setAttribute("class", "cursor show");
+  //       if (interactable.getAttribute("datatype") === "button")
+  //         return cursor.children[1].setAttribute("class", "icon show");
+  //       return cursor.children[2].setAttribute("class", "icon show");
+  //     }
+  //
+  //     if (!interacting) {
+  //       const childrenArray = [...cursor.children];
+  //       for (let i = 1; i < childrenArray.length; i++) {
+  //         childrenArray[i].setAttribute("class", "icon");
+  //       }
+  //       cursor.setAttribute("class", "cursor");
+  //     }
+  //   };
+  //
+  //   document.body.onmouseleave = () => {
+  //     cursor.setAttribute("class", "cursor hide ");
+  //   };
+  // }, [cursorRef]);
 
-      cursorAnimation(cursor, e, interacting);
+  const cursor = cursorRef.current!
+  window.onmousemove = (e) => {
+    const target = e.target as HTMLElement;
+    const interactable = target.closest(".interactable")! as HTMLElement;
+    const interacting = interactable !== null;
 
-      if (interacting) {
-        cursor.setAttribute("class", "cursor show");
-        if (interactable.getAttribute("datatype") === "button")
-          return cursor.children[1].setAttribute("class", "icon show");
-        return cursor.children[2].setAttribute("class", "icon show");
+    cursorAnimation(cursor, e, interacting);
+
+    if (interacting) {
+      cursor.setAttribute("class", "cursor show");
+      if (interactable.getAttribute("datatype") === "button")
+        return cursor.children[1].setAttribute("class", "icon show");
+      return cursor.children[2].setAttribute("class", "icon show");
+    }
+
+    if (!interacting) {
+      const childrenArray = [...cursor.children];
+      for (let i = 1; i < childrenArray.length; i++) {
+        childrenArray[i].setAttribute("class", "icon");
       }
+      cursor.setAttribute("class", "cursor");
+    }
+  };
 
-      if (!interacting) {
-        const childrenArray = [...cursor.children];
-        for (let i = 1; i < childrenArray.length; i++) {
-          childrenArray[i].setAttribute("class", "icon");
-        }
-        cursor.setAttribute("class", "cursor");
-      }
-    };
-
-    document.body.onmouseleave = () => {
-      cursor.setAttribute("class", "cursor hide ");
-    };
-  }, []);
+  document.body.onmouseleave = () => {
+    cursor.setAttribute("class", "cursor hide ");
+  };
 
 
   return (
     <svg
+      ref={cursorRef}
       className={"cursor"}
       xmlns="http://www.w3.org/2000/svg"
       fill="#dadddd"
