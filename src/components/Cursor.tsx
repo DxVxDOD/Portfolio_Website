@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function Cursor() {
   const touch = window.matchMedia("(hover: none)").matches;
