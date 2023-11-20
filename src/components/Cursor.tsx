@@ -25,35 +25,6 @@ export default function Cursor() {
     });
   };
 
-  // useEffect(() => {
-  //   const cursor = cursorRef.current!
-  //   window.onmousemove = (e) => {
-  //     const target = e.target as HTMLElement;
-  //     const interactable = target.closest(".interactable")! as HTMLElement;
-  //     const interacting = interactable !== null;
-  //
-  //     cursorAnimation(cursor, e, interacting);
-  //
-  //     if (interacting) {
-  //       cursor.setAttribute("class", "cursor show");
-  //       if (interactable.getAttribute("datatype") === "button")
-  //         return cursor.children[1].setAttribute("class", "icon show");
-  //       return cursor.children[2].setAttribute("class", "icon show");
-  //     }
-  //
-  //     if (!interacting) {
-  //       const childrenArray = [...cursor.children];
-  //       for (let i = 1; i < childrenArray.length; i++) {
-  //         childrenArray[i].setAttribute("class", "icon");
-  //       }
-  //       cursor.setAttribute("class", "cursor");
-  //     }
-  //   };
-  //
-  //   document.body.onmouseleave = () => {
-  //     cursor.setAttribute("class", "cursor hide ");
-  //   };
-  // }, [cursorRef]);
 
   const cursor = cursorRef.current!
   window.onmousemove = (e) => {
