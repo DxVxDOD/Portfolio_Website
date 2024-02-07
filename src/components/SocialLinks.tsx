@@ -4,7 +4,7 @@ export default function SocialLinks() {
   return (
     <nav
       className={
-        "flex text-md gap-2 h-fit z-20 justify-center xl:gap-4 xl:justify-end xl:p-4 xl:h-fit text-[#939b9b] "
+        "flex text-sm md:text-lg gap-2 h-fit z-20 justify-center xl:gap-4 xl:justify-end xl:p-4 xl:h-fit text-[#939b9b] "
       }
     >
       <SocialLink title={"GitHub"} href={"https://github.com/DxVxDOD"} />

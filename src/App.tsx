@@ -33,9 +33,9 @@ function App() {
         </>
       )}
       {!mediaQuery && (
-        <section className={"flex h-[80%] justify-between flex-col gap-16"}>
+        <section className={"flex h-[80%] justify-between flex-col sm:gap-16"}>
           <About />
-          <aside className="flex flex-col gap-4">
+          <aside className="flex flex-col gap-4 ">
             <Projects />
             <SocialLinks />
           </aside>
