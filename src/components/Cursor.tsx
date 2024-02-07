@@ -1,16 +1,18 @@
-import { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 export default function Cursor() {
   const touch = window.matchMedia("(hover: none)").matches;
   if (touch) return null;
 
-  const cursorRef = useRef<SVGSVGElement>(null)
+  const cursorRef = useRef<SVGSVGElement>(null);
 
-  const cursorAnimation = (
+  const cursor = cursorRef.current;
+
+  function cursorAnimation(
     cursor: SVGSVGElement,
     e: MouseEvent,
     interacting: boolean,
-  ) => {
+  ) {
     const x = e.clientX - cursor.clientWidth / 2;
     const y = e.clientY - cursor.clientHeight / 2;
 
@@ -23,37 +25,45 @@ export default function Cursor() {
       duration: 800,
       fill: "forwards",
     });
-  };
+  }
 
-
-  const cursor = cursorRef.current!
-  window.onmousemove = (e) => {
+  function cursorMovement(e: MouseEvent, cursor: SVGSVGElement | null) {
     const target = e.target as HTMLElement;
-    const interactable = target.closest(".interactable")! as HTMLElement;
-    const interacting = interactable !== null;
+    const intractable = target.closest(".interactable") as HTMLElement;
+    const interacting = intractable !== null;
 
-    cursorAnimation(cursor, e, interacting);
+    if (cursor) {
+      cursorAnimation(cursor, e, interacting);
 
-    if (interacting) {
-      cursor.setAttribute("class", "cursor show");
-      if (interactable.getAttribute("datatype") === "button")
-        return cursor.children[1].setAttribute("class", "icon show");
-      return cursor.children[2].setAttribute("class", "icon show");
-    }
-
-    if (!interacting) {
-      const childrenArray = [...cursor.children];
-      for (let i = 1; i < childrenArray.length; i++) {
-        childrenArray[i].setAttribute("class", "icon");
+      if (interacting) {
+        cursor.setAttribute("class", "cursor show");
+        if (intractable.getAttribute("datatype") === "button")
+          return cursor.children[1].setAttribute("class", "icon show");
+        return cursor.children[2].setAttribute("class", "icon show");
       }
-      cursor.setAttribute("class", "cursor");
+
+      if (!interacting) {
+        const childrenArray = [...cursor.children];
+        for (let i = 1; i < childrenArray.length; i++) {
+          childrenArray[i].setAttribute("class", "icon");
+        }
+        cursor.setAttribute("class", "cursor");
+      }
     }
-  };
+  }
 
-  document.body.onmouseleave = () => {
-    cursor.setAttribute("class", "cursor hide ");
-  };
+  function hideCursor(cursor: SVGSVGElement | null) {
+    if (cursor) {
+      cursor.setAttribute("class", "cursor hide ");
+    }
+  }
 
+  useEffect(() => {
+    window.onmousemove = (e) => cursorMovement(e, cursor);
+    return () => {
+      document.body.onmouseleave = () => hideCursor(cursor);
+    };
+  }, [cursor]);
 
   return (
     <svg
