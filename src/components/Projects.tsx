@@ -11,7 +11,6 @@ export default function Projects() {
       <Button title={"Marks"} />
       <Button title={"Personal-Blog"} />
       <Button title={"E-Commerce-Website"} />
-      <Button title={"E-Commere Dashboard"} />
     </nav>
   );
 }

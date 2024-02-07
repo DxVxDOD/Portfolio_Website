@@ -1,9 +1,6 @@
 import { useRef, useEffect } from "react";
 
 export default function Cursor() {
-  const touch = window.matchMedia("(hover: none)").matches;
-  if (touch) return null;
-
   const cursorRef = useRef<SVGSVGElement>(null);
 
   const cursor = cursorRef.current;
