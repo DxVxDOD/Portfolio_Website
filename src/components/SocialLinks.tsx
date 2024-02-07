@@ -1,4 +1,3 @@
-import React from "react";
 import { SocialLink } from "./UI/SocialLink.tsx";
 
 export default function SocialLinks() {

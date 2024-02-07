@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function About({ mobile }: { mobile: boolean }) {
   const text = mobile ? "text-xs" : "";
 

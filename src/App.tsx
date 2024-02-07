@@ -1,4 +1,3 @@
-import React from "react";
 import SocialLinks from "./components/SocialLinks.tsx";
 import About from "./components/About.tsx";
 import Projects from "./components/Projects.tsx";
@@ -18,7 +17,7 @@ function App() {
           "flex flex-col text-3xl md:text-4xl xl:text-5xl 2xl:text-7xl"
         }
       >
-        <p className={"w-fit"}>David Orbang</p>
+        <p className={"w-fit"}>David Orban</p>
         <p className={"xl:p-10 pl-6 xl:pl-20 w-fit"}>Front-End Developer</p>
       </h1>
       {useMediaQuery("sm") && (
