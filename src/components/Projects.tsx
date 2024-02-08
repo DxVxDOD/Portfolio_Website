@@ -1,4 +1,4 @@
-import { Button } from "./UI/Button.tsx";
+import { SocialLink } from "./UI/SocialLink.tsx";
 
 export default function Projects() {
   return (
@@ -8,9 +8,8 @@ export default function Projects() {
       }
     >
       <h2 className={"text-xl text-[#939b9b] p-2"}>Projects:</h2>
-      <Button title={"Marks"} />
-      <Button title={"Personal-Blog"} />
-      <Button title={"E-Commerce-Website"} />
+      <SocialLink href="https://marks.onrender.com" title="Marks" />
+      <SocialLink href="https://inet-clone.vercel.app/" title="Inet Clone" />
     </nav>
   );
 }
