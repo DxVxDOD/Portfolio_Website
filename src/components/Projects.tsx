@@ -13,6 +13,10 @@ export default function Projects() {
         href="https://inet-clone.vercel.app/"
         title="Inet Clone (In progress)"
       />
+      <SocialLink
+        href="https://marks.onrender.com"
+        title="Auth System with JWT"
+      />
     </nav>
   );
 }
