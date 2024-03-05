@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 export default function About() {
   const textRef = useRef<HTMLDivElement>(null);
 
-  const longText = `A <b>Front-End Developer</b> who is passionate about web development and eager to tackle challenges. Specializing in <b>React</b> and <b>Typescript</b>, I am open to new technologies and aspire to become a <b>Full-Stack Developer</b>. I prioritize optimal coding practices and embrace diverse ideas to drive innovation and excellence in my career.`;
+  const longText = `A <b>Full-Stack Developer</b> who is passionate about web development and eager to tackle challenges. Specializing in <b>React</b> and <b>Typescript</b>, and <b>Node.js</b> I am open to new technologies and aspire to become a great <b>Software Engineer</b>. I prioritize optimal coding practices and embrace diverse ideas to drive innovation and excellence in my career.`;
 
   const textArray = longText.split(" ");
 
