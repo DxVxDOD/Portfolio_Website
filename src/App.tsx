@@ -23,7 +23,7 @@ function App() {
         }
       >
         <p className={"w-fit"}>David Orban</p>
-        <p className={"xl:p-10 pl-6 xl:pl-20 w-fit"}>Front-End Developer</p>
+        <p className={"xl:p-10 pl-6 xl:pl-20 w-fit"}>Full-Stack Developer</p>
       </h1>
       {mediaQuery && (
         <>
