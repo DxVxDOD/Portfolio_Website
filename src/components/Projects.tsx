@@ -14,7 +14,7 @@ export default function Projects() {
         title="Inet Clone (In progress)"
       />
       <SocialLink
-        href="https://marks.onrender.com"
+        href="https://github.com/DxVxDOD/Authentication_system"
         title="Auth System with JWT"
       />
     </nav>
