@@ -8,10 +8,6 @@ export default function SocialLinks() {
       }
     >
       <SocialLink title={"GitHub"} href={"https://github.com/DxVxDOD"} />
-      <SocialLink
-        title={"Facebook"}
-        href={"https://www.linkedin.com/in/david-orbang/"}
-      />
       <SocialLink title={"Twitter"} href={"https://twitter.com/OrbanDavid24"} />
       <SocialLink
         title={"Personal Blog"}
