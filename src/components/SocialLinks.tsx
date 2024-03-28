@@ -9,10 +9,6 @@ export default function SocialLinks() {
     >
       <SocialLink title={"GitHub"} href={"https://github.com/DxVxDOD"} />
       <SocialLink title={"Twitter"} href={"https://twitter.com/OrbanDavid24"} />
-      <SocialLink
-        title={"Personal Blog"}
-        href={"https://my-blog-jtqt0npju-dxvxdod.vercel.app/"}
-      />
     </nav>
   );
 }
